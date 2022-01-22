@@ -1,38 +1,125 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
-
-
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else if (num2 > num1) {
+    return num2;
+  } else {
+    return num1, num2;
+  }
+}
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
-
-
+function findLongestWord(words) {
+  if (typeof words !== 'undefined' && words.length === 0) {
+    return null;
+  }
+  // should return the word when called with a single-word array
+  else if (words.length < 2) {
+    return words[0];
+  }
+  /*
+  // should return the first occurrence of the word when longest have multiple occurrences
+  else if () {
+    return ;
+  }
+  // should return the longest occurrence when it has multiple words
+  else {
+    return ;
+  }
+*/
+}
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
-
+function sumNumbers(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+}
 
 // Iteration #3.1 Bonus:
-function sum() {}
-
-
+function sum(nums) {
+  // should return zero if receives an empty array when called
+  if (typeof nums !== 'undefined' && nums.length === 0) {
+    return 0;
+  }
+  // should return the sum with one number array
+  else if (nums.length < 2) {
+    return nums[0];
+  }
+  // should return zero if all elements are zero
+  else if (nums.every((item) => item === 0)) {
+    return 0;
+  }
+  // should return the sum when passed array of numbers
+  else if (typeof nums !== NaN) {
+    return nums.reduce((a, b) => a + b, 0);
+  }
+  // should return the sum when passed array of strings
+  else if (typeof nums === 'string') {
+    return;
+  }
+}
+/*
+  // should return the sum when passed array of mixed strings and numbers -
+  else if () {
+    return ;
+  }
+  // should return the sum when passed array of mixed strings, numbers and booleans -
+  else if () {
+    return ;
+  }
+  // should throw an error when unsupported data type (object or array) present in the array
+  else if () {
+    return ;
+  }
+}
+*/
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
-
+function averageNumbers(numbersAvg) {
+  // should return null if receives an empty array when called
+  if (numbersAvg.length === 0) {
+    return null;
+  }
+  // should return the average of a one-element array
+  else if (numbersAvg.length < 2) {
+    return numbersAvg[0];
+  }
+  // should return the average even with negative values
+  // should return the average of the array
+  else {
+    const sum = numbersAvg.reduce((a, c) => a + c, 0);
+    return sum / numbersAvg.length;
+  }
+}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr) {
+  // should return null if receives an empty array when called
+  if (wordsArr.length === 0) {
+    return null;
+  }
+  // should return the average of a one-element array -- FAIL
+  else if (wordsArr.length < 2) {
+    return wordsArr[0];
+  }
+  // should return the average of the array
+  else {
+    return wordsArr.join('').length / wordsArr.length;
+  }
+}
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,16 +139,44 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
-
-
+function uniquifyArray(wordsUnique) {
+  // should return null if receives an empty array when called
+  if (wordsUnique.length === 0) {
+    return null;
+  }
+  // should return the correct uniqified array when an array of the same elements passed as argument
+  // should return the same array when no element is repeated
+  // should return the uniquified array
+  else {
+    let newArr = [...new Set(wordsUnique)];
+    return newArr;
+  }
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
-
-
+function doesWordExist(wordsFind) {
+  // should return null if receives an empty array when called
+  if (wordsFind.length === 0) {
+    return null;
+  }
+  // should return true if the word we are looking for is the only one in the array
+  else if (wordsFind.length < 2) {
+    return true;
+  }
+  // should return false if the word we are looking for is not in the array
+  else if (wordsFind.indexOf() > -1);
+  {
+    return false;
+  }
+  /* - FAIL
+  // should return true if the word we are looking for is in the array
+  else {
+    return true;
+  }
+  */
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -78,9 +193,24 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
-
-
+function howManyTimes(wordsCount) {
+  // should return 0 (zero) if receives an empty array when called
+  if (wordsCount.length === 0) {
+    return 0;
+  }
+  // should return 0 (zero) when the word doesn't appear in the array
+  else if (wordsCount.indexOf() > -1);
+  {
+    return 0;
+  }
+  // should return 1 (one) when the word appears only one time in the array, should return 5 (five) when the word appears 5 times in the array
+  // - FAIL
+  const countOccurence = {};
+  for (const iteration7Word of wordsCount) {
+    countsOccurence[iteration7Word] = countsOccurence[iteration7Word] ? countsOccurence[iteration7Word] + 1 : 1;
+  }
+  return countsOccurence[i];
+}
 
 // Iteration #8: Bonus
 const matrix = [
@@ -107,9 +237,6 @@ const matrix = [
 ];
 
 function greatestProduct() {}
-
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
